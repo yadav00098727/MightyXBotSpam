@@ -109,7 +109,7 @@ async def ping(e):
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
-        text = "**Restarting Your Mighty X Spam...** Please Wait Few Seconds."
+        text = "𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗬𝗼𝘂𝗿 𝗠𝗶𝗴𝗵𝘁𝘆 𝗫 𝗦𝗽𝗮𝗺... | Please Wait Few Seconds."
         await e.reply(text, parse_mode=None, link_preview=None)
         try:
             await Mig.disconnect()
