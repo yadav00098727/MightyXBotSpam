@@ -35,6 +35,7 @@ async def help(event):
            ],
            [    
             Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
+            Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
            ],
            ],
            )              
@@ -122,7 +123,7 @@ i) {hl}pornspam <count>
 Command:
 i) {hl}hang <counter> (you can reply any message if you want bot to reply that message and do spamming)
 
-** © @MightyXSupport || MightyXUpdates**
+** © @MightyXSupport**
 """                     
            
            
@@ -150,6 +151,7 @@ async def helpback(event):
            ],
            [    
             Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
+            Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
            ],
            ],
         )           
