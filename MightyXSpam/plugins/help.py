@@ -145,11 +145,11 @@ async def helpback(event):
             Mig_Help,
             buttons=[
                 [
-            Button.inline("Spam", data="spam"),
-            Button.inline("Raid", data="raid"),
+            Button.inline("• Spam •", data="spam"),
+            Button.inline("• Raid •", data="raid"),
            ],
            [
-            Button.inline("Extra cmds", data="extra"),
+            Button.inline("• Extra •", data="extra"),
            ],
            [    
             Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
