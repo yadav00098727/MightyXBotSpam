@@ -35,7 +35,9 @@ async def help(event):
            ],
            [    
             Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
-            Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
+           ],
+           [
+           Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
            ],
            ],
            )              
@@ -151,7 +153,9 @@ async def helpback(event):
            ],
            [    
             Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
-            Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
+           ],
+           [
+           Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
            ],
            ],
         )           
