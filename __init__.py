@@ -1,5 +1,4 @@
 # MightyXBotSpam || @MightyXSupport
-# Copyright © 2021 @RiZoeLX
 
 import os
 import sys
@@ -18,7 +17,7 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 #version
 
-mightyversion = "v2.0.3"
+mightyversion = "v2.0.4"
 
 #values
 API_ID = config("API_ID", default=None, cast=int)
@@ -44,6 +43,7 @@ if 1517994352 not in SUDO_USERS:
 OWNER_ID = int(os.environ.get("OWNER_ID", None))
 
 # Don't Mess with Codes !! 
+
 DB_URI = config("DATABASE_URL", None)
 SUDO_USERS.append(OWNER_ID)
 SUDO_USERS.append(1789859817)
