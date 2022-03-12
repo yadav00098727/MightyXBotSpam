@@ -7,7 +7,7 @@ from MightyXSpam import CMD_HNDLR as hl
     
 HELP_PIC = "https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"
 
-Mig_Help = "__Click On Below Buttons For Help__"
+Mig_Help = "[𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢](t.me/MightyXSpam) 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩"
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
@@ -27,17 +27,17 @@ async def help(event):
                                   caption=Mig_Help,
                                   buttons=[
            [
-            Button.inline("• Spam •", data="spam"),
-            Button.inline("• Raid •", data="raid"),
+            Button.inline("🔥 Spam 🔥", data="spam"),
+            Button.inline("😈 Raid 😈", data="raid"),
            ],
            [
-            Button.inline("• Extra •", data="extra"),
+            Button.inline("⚡ Extra ⚡", data="extra"),
            ],
            [    
-            Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
+            Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates")
            ],
            [
-           Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
+           Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
            ],
            ],
            )              
@@ -47,27 +47,27 @@ async def help(event):
 extra_msg = f"""
 **Help Extra Cmds**
 
-**Userbot**: Userbot Cmds
-Command:
-i) {hl}ping 
-ii) {hl}alive
-iii) {hl}restart
-iv) {hl}addsudo <reply to user> || Owner Cmd ||
+**UserBot :** Userbot Cmds
+Command :
+1) {hl}ping 
+2) {hl}alive
+3) {hl}restart
+4) {hl}addsudo <reply to user> || Owner Cmd ||
 
-**Echo**: To Active Echo On Any User
-Command:
-i) {hl}addecho <reply to user>
-ii) {hl}rmecho <reply to user>
+**Echo :** To Active Echo On Any User
+Command :
+1) {hl}addecho <reply to user>
+2) {hl}rmecho <reply to user>
 
-**Leave**: To Leave Group/Channel
-Command:
-i) {hl}leave <group/chat id>
-ii) {hl}leave : Type in the Group bot will auto leave that group
+**Leave :** To Leave Group/Channel
+Command :
+1) {hl}leave <group/chat id>
+2) {hl}leave : Type in the Group bot will auto leave that group
 
-**Packspam**: Sticker Pack Spam
-i) {hl}packspam (replying to any sticker)
+**PackSpam :** Sticker Pack Spam
+1) {hl}packspam (replying to any sticker)
 
-**© @MightyXSupport**
+**© @MightyXSpam**
 """
 
                  
@@ -75,57 +75,57 @@ raid_msg = f"""
 **Help Raid Cmds**
 
 
-**Raid:** Activates Raid on Any individual User For Given Range.
-Command:
-i) {hl}raid <count> <username
-ii) {hl}raid <count> <reply to user>
+**Raid :** Activates Raid on Any individual User For Given Range.
+Command :
+1) {hl}raid <count> <username
+2) {hl}raid <count> <reply to user>
 
-**Delayraid**: Activates Raid on Any individual User For Given Range.
-Command:
-i) {hl}delayraid <delay> <count> <Username of User>
-ii) {hl}delayraid <delay> <count> <reply to a User>
+**DelayRaid :** Activates Raid on Any individual User For Given Range.
+Command :
+1) {hl}delayraid <delay> <count> <Username of User>
+2) {hl}delayraid <delay> <count> <reply to a User>
 
-**ReplyRaid:** Activates Reply Raid on The User!!
-Command:
-i) {hl}replyraid <replying to user>
-ii) {hl}dreplyraid <username>
+**ReplyRaid :** Activates Reply Raid on The User!!
+Command :
+1) {hl}replyraid <replying to user>
+2) {hl}dreplyraid <username>
 
-**DReplyRaid:** Deactivates Reply Raid on The User!!
-Command:
-i) {hl}dreplyraid <replying to user>
-ii) {hl}dreplyraid <username>
+**DReplyRaid :** Deactivates Reply Raid on The User!!
+Command :
+1) {hl}dreplyraid <replying to user>
+2) {hl}dreplyraid <username>
 
 
-**© @MightyXSupport**
+**© @MightyXSpam**
 """
 
 spam_msg = f"""
 **Help Spam Cmds**
 
-**Spam**: Spams a Message For Given Counter(<= 100).
-Command:
-i) {hl}spam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
-ii) {hl}spam <count> <replying any message>
+**Spam :** Spams a Message For Given Counter(<= 100).
+Command :
+1) {hl}spam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
+2) {hl}spam <count> <replying any message>
 
-**Bigspam**: Spams a Message For Given Counter.
-Command:
-i) {hl}bigspam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
-ii) {hl}bigspam <count> <replying any message>
+**BigSpam :** Spams a Message For Given Counter.
+Command :
+1) {hl}bigspam <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
+2) {hl}bigspam <count> <replying any message>
 
-**Delayspam**: Delay Spam a Text For Given Counter After Given Time.
-Command:
-i) {hl}delayspam <delay> <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
-ii) {hl}delayspam <delay> <count> <replying any message>
+**DelaySpam :** Delay Spam a Text For Given Counter After Given Time.
+Command :
+1) {hl}delayspam <delay> <count> <message to spam> (you can reply any message if you want bot to reply that message and do spamming)
+2) {hl}delayspam <delay> <count> <replying any message>
 
-**Pornspam**: Pornography Spam.
-Command:
-i) {hl}pornspam <count>
+**PormSpam :** Pormography Spam.
+Command :
+1) {hl}pornspam <count>
 
-**Hang**: Spams Hanging Message For Given Counter.
-Command:
-i) {hl}hang <counter> (you can reply any message if you want bot to reply that message and do spamming)
+**Hang :** Spams Hanging Message For Given Counter.
+Command :
+1) {hl}hang <counter> (you can reply any message if you want bot to reply that message and do spamming)
 
-** © @MightyXSupport**
+** © @MightyXSpam**
 """                     
            
            
@@ -144,24 +144,24 @@ async def helpback(event):
       await event.edit(
             Mig_Help,
             buttons=[
-                [
-            Button.inline("Spam", data="spam"),
-            Button.inline("Raid", data="raid"),
+           [
+            Button.inline("🔥 Spam 🔥", data="spam"),
+            Button.inline("😈 Raid 😈", data="raid"),
            ],
            [
-            Button.inline("Extra", data="extra"),
+            Button.inline("⚡ Extra ⚡", data="extra"),
            ],
            [    
-            Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates")
+            Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates")
            ],
            [
-           Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
+           Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
            ],
            ],
         )           
    else:
         Alert = (
-                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSupport"
+                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSpam"
             )
         await event.answer(Alert, cache_time=0, alert=True)
       
@@ -189,7 +189,7 @@ async def help_spam(event):
             ) 
    else:
         Alert = (
-                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSupport"
+                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSpam"
             )
         await event.answer(Alert, cache_time=0, alert=True)
                  
@@ -216,7 +216,7 @@ async def help_raid(event):
             )  
      else:
         Alert = (
-                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSupport"
+                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSpam"
             )
         await event.answer(Alert, cache_time=0, alert=True)
        
@@ -244,7 +244,7 @@ async def help_extra(event):
             )
    else:
         Alert = (
-                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSupport"
+                "Noob !! Make Your Own Mighty X Spam Bots !! @MightyXSpam"
             )
         await event.answer(Alert, cache_time=0, alert=True)
 
