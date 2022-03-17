@@ -9,7 +9,6 @@ from MightyXSpam import CMD_HNDLR as hl
     
 HELP_PIC = "https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"
 
-Mig_Help = "★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ [{firstname}](tg://user?id={userid})\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩"
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
@@ -29,7 +28,7 @@ async def help(event):
         userid = user.user.id
         await event.client.send_file(event.chat_id,
                                   HELP_PIC,
-                                  caption=Mig_Help,
+                                  caption="★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ [{firstname}](tg://user?id={userid})\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
                                   buttons=[
            [
             Button.inline("🔥 Spam 🔥", data="spam"),
@@ -145,9 +144,11 @@ Command :
 @Mig9.on(events.CallbackQuery(pattern=r"help_back"))
 @Mig10.on(events.CallbackQuery(pattern=r"help_back"))
 async def helpback(event):
-   if event.query.user_id in SUDO_USERS:    
-      await event.edit(
-            Mig_Help,
+   if event.query.user_id in SUDO_USERS:
+       user = await event.client(GetFullUserRequest(event.sender_id))
+       firstname = user.user.first_name
+       userid = user.user.id
+       await event.edit("★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ [{firstname}](tg://user?id={userid})\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
             buttons=[
            [
             Button.inline("🔥 Spam 🔥", data="spam"),
