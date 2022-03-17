@@ -29,7 +29,7 @@ async def leave(e):
             event = await e.reply(text, parse_mode=None, link_preview=None )
             try:
                 await event.client(LeaveChannelRequest(Xd))
-                await event.edit("Succesfully Left ✅")
+                await event.edit("Succesfully Left !! ✅")
             except Exception as e:
                 await event.edit(str(e))
          
@@ -38,7 +38,7 @@ async def leave(e):
              Xd = int(bc)
              text = "I'm Leaving This Group......"
              if e.is_private:
-                  dik = f"You Can't Do This Here !! \n\n {hl}leave <Channel or Chat ID> \n {hl}leave : type in the group bot will auto leave that group !"
+                  dik = f"You Can't Do This Here !! \n\n {hl}leave <Channel or Chat ID> \n {hl}leave : type in the group, bot will auto leave that group..!"
                   await e.reply(dik, parse_mode=None, link_preview=None )
              else:
                   event = await e.reply(text, parse_mode=None, link_preview=None )
