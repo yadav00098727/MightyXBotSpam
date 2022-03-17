@@ -28,7 +28,7 @@ async def help(event):
         user = await event.client(GetFullUserRequest(event.sender_id))
         firstname = user.user.first_name
         userid = user.user.id
-       await event.client.send_file(event.chat_id,
+        await event.client.send_file(event.chat_id,
                                   HELP_PIC,
                                   caption=Mig_Help,
                                   buttons=[
