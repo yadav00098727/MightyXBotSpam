@@ -11,20 +11,20 @@ MIG_IMG = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/2ead82e77994638db
 
 Mig_Button = [
         [
-        Button.url("• sᴜᴘᴘᴏʀᴛ •", "https://t.me/@MightyXSupport")
+        Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/@MightyXSupport")
         ],
         [
-        Button.inline("• ᴄᴍᴅs •", data="help_back")
+        Button.inline("⚡ ᴄᴏᴍᴍᴀɴᴅs ⚡", data="help_back")
         ]
         ]
                
 MigX_Button = [
         [
-        Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/MightyXUpdates"),
-        Button.url("sᴜᴘᴘᴏʀᴛ", "https://t.me/MightyXSupport")
+        Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates"),
+        Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
         ],
         [
-        Button.url("• ʀᴇᴘᴏ •", "https://github.com/BeingMighty/MightyXBotSpam")
+        Button.url("🔥 ʀᴇᴘᴏ 🔥", "https://github.com/BeingMighty/MightyXBotSpam")
         ]
         ]
         
@@ -46,13 +46,13 @@ MigX_Button = [
 async def start(event):              
     if event.is_private:
        MigBot = await event.client.get_me()
-       bot_id = MigBot.first_name
-       bot_username = MigBot.username
+       bot_name = MigBot.first_name
        replied_user = await event.client(GetFullUserRequest(event.sender_id))
        TheMighty = event.chat_id
        firstname = replied_user.user.first_name
-       ownermsg = f"**Hello Boss !!, Its Me {bot_id}, Your Spam Bot !! \n\n Click Below Buttons For Help. 🌚**"
-       usermsg = f"**Hey !! {firstname} ! Nice To Meet You, Well I Am {bot_id}, A Powerfull Spam Bot.** \n\n**If You Want Your Own Spam Bots You Can Deploy From Button Below.** \n\n**Powered By : [𝐌𝐈𝐆𝐇𝐓𝐘 𝐗](https://t.me/MightyXSpam)**"
+       userid = replied_user.user.id
+       ownermsg = f"**Hello Boss !!, It's Me {bot_name}, Your Spam Bot !! \n\n Click Below Buttons For Help. 🌚**"
+       usermsg = f"**Hello !! [{firstname}](tg://user?id={userid})\nNice To Meet You, Well I Am [{bot_name}](tg://user?id={bot_id}), A Powerfull Spam Bot.** \n\n**If You Want Your Own Spam Bots You Can Deploy From Button Below.** \n\n**Powered By : [𝙈𝙞𝙜𝙝𝙩𝙮 𝙓 𝙎𝙥𝙖𝙢](https://t.me/MightyXSpam)**"
        if event.sender_id == OWNER_ID:
             await event.client.send_file(TheMighty,
                   MIG_IMG,
