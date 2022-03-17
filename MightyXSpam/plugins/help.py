@@ -26,9 +26,10 @@ async def help(event):
         user = await event.client(GetFullUserRequest(event.sender_id))
         firstname = user.user.first_name
         userid = user.user.id
+        mention = f"[{firstname}](tg://user?id={userid})"
         await event.client.send_file(event.chat_id,
                                   HELP_PIC,
-                                  caption="★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ [{firstname}](tg://user?id={userid})\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
+                                  caption="★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ {mention}\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
                                   buttons=[
            [
             Button.inline("🔥 Spam 🔥", data="spam"),
@@ -148,7 +149,8 @@ async def helpback(event):
        user = await event.client(GetFullUserRequest(event.sender_id))
        firstname = user.user.first_name
        userid = user.user.id
-       await event.edit("★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ [{firstname}](tg://user?id={userid})\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
+       mention = f"[{firstname}](tg://user?id={userid})"
+       await event.edit("★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ {mention}\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩",
             buttons=[
            [
             Button.inline("🔥 Spam 🔥", data="spam"),
