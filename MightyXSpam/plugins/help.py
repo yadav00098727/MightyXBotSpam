@@ -1,13 +1,16 @@
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5, Mig6, Mig7, Mig8, Mig9, Mig10, SUDO_USERS
 from telethon import events, Button
+from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.custom import button
 from time import time
 from datetime import datetime
 from MightyXSpam import CMD_HNDLR as hl
+
+mention = f"[{firstname}](tg://user?id={userid})"
     
 HELP_PIC = "https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"
 
-Mig_Help = "★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩"
+Mig_Help = "★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n\n__Provided To :__ {mention}\n\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩"
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
@@ -22,6 +25,9 @@ Mig_Help = "★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 �
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%shelp(?: |$)(.*)" % hl))
 async def help(event):
     if event.sender_id in SUDO_USERS:
+        user = await event.client(GetFullUserRequest(event.sender_id))
+        firstname = user.user.first_name
+        userid = user.user.id
        await event.client.send_file(event.chat_id,
                                   HELP_PIC,
                                   caption=Mig_Help,
