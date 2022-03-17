@@ -6,7 +6,6 @@ from time import time
 from datetime import datetime
 from MightyXSpam import CMD_HNDLR as hl
 
-mention = f"[{firstname}](tg://user?id={userid})"
     
 HELP_PIC = "https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"
 
@@ -28,6 +27,7 @@ async def help(event):
         user = await event.client(GetFullUserRequest(event.sender_id))
         firstname = user.user.first_name
         userid = user.user.id
+        mention = f"[{firstname}](tg://user?id={userid})"
         await event.client.send_file(event.chat_id,
                                   HELP_PIC,
                                   caption=Mig_Help,
