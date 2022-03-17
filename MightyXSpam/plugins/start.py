@@ -53,7 +53,7 @@ async def start(event):
        firstname = replied_user.user.first_name
        userid = replied_user.user.id
        ownermsg = f"**Hello Boss !!, It's Me {bot_name}, Your Spam Bot !! \n\n Click Below Buttons For Help. 🌚**"
-       usermsg = f"**Hello !! [{firstname}](tg://user?id={userid})\nNice To Meet You, Well I Am [{bot_name}](tg://user?id={bot_id}), A Powerfull Spam Bot.** \n\n**If You Want Your Own Spam Bots You Can Deploy From Button Below.** \n\n**Powered By : [𝙈𝙞𝙜𝙝𝙩𝙮 𝙓 𝙎𝙥𝙖𝙢](https://t.me/MightyXSpam)**"
+       usermsg = f"**Hello !! [{firstname}](tg://user?id={userid})\nNice To Meet You, Well I Am [{bot_name}](tg://user?id={bot_id}), A Powerfull Spam Bot.** \n\n**If You Want Your Own Spam Bots You Can Deploy From Button Given Below.** \n\n**Powered By : [𝙈𝙞𝙜𝙝𝙩𝙮 𝙓 𝙎𝙥𝙖𝙢](https://t.me/MightyXSpam)**"
        if event.sender_id == OWNER_ID:
             await event.client.send_file(TheMighty,
                   MIG_IMG,
