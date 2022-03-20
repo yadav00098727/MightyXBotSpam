@@ -1,3 +1,5 @@
+# Mighty X Spam | @MightyXSpam
+# Keep Credits Madafaka !!
 import os
 import asyncio
 import sys
@@ -6,22 +8,14 @@ import heroku3
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, OWNER_ID, SUDO_USERS, HEROKU_APP_NAME, HEROKU_API_KEY, mightyversion
 from MightyXSpam import CMD_HNDLR as hl
 from telethon.tl.functions.users import GetFullUserRequest
-from MightyXSpam import ALIVE_PIC
+from MightyXSpam import ALIVE_PIC, ALIVE_TEXT
 from telethon import events, version, Button
 from telethon.tl.custom import button
 from time import time
 from datetime import datetime
 
 MIG_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/2ead82e77994638db6e39.jpg"
-  
-
-mighty = "╚»★ 𝗠𝗶𝗴𝗵𝘁𝘆𝗫𝗦𝗽𝗮𝗺 𝗶𝘀 𝗛𝗲𝗿𝗲 ★«╝\n\n"
-mighty += f"═══════════════════\n"
-mighty += f"⚡ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n"
-mighty += f"⚡ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n"
-mighty += f"⚡ **ᴍɪɢʜᴛʏXsᴘᴀᴍ**  : `{mightyversion}`\n"
-mighty += f"═══════════════════\n\n"   
-
+MIG_TEXT = ALIVE_TEXT if ALIVE_TEXT else "╚»★ 𝗠𝗶𝗴𝗵𝘁𝘆𝗫𝗦𝗽𝗮𝗺 𝗶𝘀 𝗛𝗲𝗿𝗲 ★«╝"
                                   
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%salive(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%salive(?: |$)(.*)" % hl))
@@ -35,10 +29,14 @@ mighty += f"═══════════════════\n\n"
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%salive(?: |$)(.*)" % hl))
 async def alive(event):
   if event.sender_id in SUDO_USERS:
-     await event.client.send_file(event.chat_id,
-                                  MIG_PIC,
-                                  caption=mighty,
-                                  buttons=[
+      start = datetime.now()
+      text = "𝘊𝘩𝘦𝘤𝘬𝘪𝘯𝘨..."
+      check = await event.reply(text, parse_mode=None, link_preview=None )
+      end = datetime.now()
+      ms = (end-start).microseconds / 1000
+      await check.delete()
+      await event.client.send_file(event.chat_id,
+                                  MIG_PIC, caption=f"""{MIG_TEXT}\n\n═══════════════════\n⚡ **ᴘɪɴɢ**  : `{ms} ᴍs`\n⚡ **ᴍɪɢʜᴛʏXsᴘᴀᴍ**  : `{mightyversion}`\n⚡ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n⚡ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n═══════════════════\n\n""", buttons=[
         [
         Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates"),
         Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
