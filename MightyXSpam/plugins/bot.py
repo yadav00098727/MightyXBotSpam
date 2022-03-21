@@ -36,7 +36,7 @@ async def alive(event):
       ms = (end-start).microseconds / 1000
       await check.delete()
       await event.client.send_file(event.chat_id,
-                                  MIG_PIC, caption=f"""{MIG_TEXT}\n\n═══════════════════\n⚡ **ᴘɪɴɢ**  : `{ms} ᴍs`\n⚡ **ᴍɪɢʜᴛʏXsᴘᴀᴍ**  : `{mightyversion}`\n⚡ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n⚡ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n═══════════════════\n\n""", buttons=[
+                                  MIG_PIC, caption=f"""{MIG_TEXT}\n\n═══════════════════\n⚡ **ᴘɪɴɢ**  : `{ms}ᵐˢ`\n⚡ **ᴍɪɢʜᴛʏXsᴘᴀᴍ**  : `{mightyversion}`\n⚡ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n⚡ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n═══════════════════\n\n""", buttons=[
         [
         Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates"),
         Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
@@ -91,7 +91,14 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None )
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await event.edit(f"▒█▀▀█ ▒█▀▀▀█ ▀▀█▀▀\n▒█▀▀▄ ▒█░░▒█ ░▒█░░\n▒█▄▄█ ▒█▄▄▄█ ░▒█░░\n\nϟ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ϟ︎ `{ms}` ᴍs")
+        message = await event.get_reply_message()
+        user = await event.client(GetFullUserRequest(message.sender_id))
+        firstname = user.user.first_name
+        userid = user.user.id
+    if userid == OWNER_ID:
+        await event.edit(f"▒█▀▀█ ▒█▀▀▀█ ▀▀█▀▀\n▒█▀▀▄ ▒█░░▒█ ░▒█░░\n▒█▄▄█ ▒█▄▄▄█ ░▒█░░\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐎𝐰𝐧𝐞𝐫 : [{firstname}](tg://user?id={userid})")
+    else:
+        await event.edit(f"▒█▀▀█ ▒█▀▀▀█ ▀▀█▀▀\n▒█▀▀▄ ▒█░░▒█ ░▒█░░\n▒█▄▄█ ▒█▄▄▄█ ░▒█░░\n\n    ⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 ⚡\n\n𝐏𝐢𝐧𝐠 : `{ms}` ᴍs\n𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫 : [{firstname}](tg://user?id={userid})")
         
         
 
@@ -174,12 +181,12 @@ async def tb(event):
         try:
             target = await get_user(event)
         except Exception:
-            await ok.edit(f"Reply To a User.")
+            await ok.edit(f"Reply To a User !!")
         if sudousers:
             newsudo = f"{sudousers} {target}"
         else:
             newsudo = f"{target}"
-        await ok.edit(f"**Added `{target}` ** As Sudo User ✨ || Restarting... Please Wait Few Seconds.")
+        await ok.edit(f"**Added** `{target}` **As Sudo User** ✨ | Restarting... Please Wait Few Seconds.")
         heroku_var[mighty] = newsudo   
    
      
