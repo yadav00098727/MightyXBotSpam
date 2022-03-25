@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://telegra.ph/file/17df2d8536474db7e9ee9.jpg"width="350"" alt="MightyXSpam Logo">
+  <img src="https://telegra.ph/file/38eae16b57a0c2d039423.jpg"width="350"" alt="MightyXSpam Logo">
 </p>
 <h1 align="center">
   <b>⚠️ 𝘔𝘪𝘨𝘩𝘵𝘺 𝘟 𝘉𝘰𝘵 𝘚𝘱𝘢𝘮 ⚠️</b>
@@ -11,7 +11,7 @@
 [![Python](https://img.shields.io/badge/Python-v3.9.7-blue?style=flat-square)](https://www.python.org/)
 
  
-- [x] ⚡ ғᴀsᴛ ᴀɴᴅ sᴛᴀʙʟᴇ ✨
+- [x] ⚡ 𝐅𝐚𝐬𝐭 & 𝐒𝐭𝐚𝐛𝐥𝐞 ✨
 - [x] Deploy 10 Bots in One Time 🔥
 - [x] PormSpam 🌚
 - [x] Deploy Using Bot Token 🤖
