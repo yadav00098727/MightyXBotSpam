@@ -8,14 +8,17 @@ import heroku3
 from MightyXSpam import Mig, Mig2, Mig3, Mig4, Mig5 , Mig6, Mig7, Mig8, Mig9, Mig10, OWNER_ID, SUDO_USERS, HEROKU_APP_NAME, HEROKU_API_KEY, mightyversion
 from MightyXSpam import CMD_HNDLR as hl
 from telethon.tl.functions.users import GetFullUserRequest
-from MightyXSpam import ALIVE_PIC, ALIVE_TEXT
+from MightyXSpam import ALIVE_NAME, ALIVE_PIC, ALIVE_TEXT
 from telethon import events, version, Button
 from telethon.tl.custom import button
 from time import time
 from datetime import datetime
 
 MIG_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/2ead82e77994638db6e39.jpg"
+
 MIG_TEXT = ALIVE_TEXT if ALIVE_TEXT else "╚»★ 𝗠𝗶𝗴𝗵𝘁𝘆𝗫𝗦𝗽𝗮𝗺 𝗶𝘀 𝗛𝗲𝗿𝗲 ★«╝"
+
+mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
                                   
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%salive(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%salive(?: |$)(.*)" % hl))
@@ -36,7 +39,7 @@ async def alive(event):
       ms = (end-start).microseconds / 1000
       await check.delete()
       await event.client.send_file(event.chat_id,
-                                  MIG_PIC, caption=f"""{MIG_TEXT}\n\n═══════════════════\n⚡ **ᴘɪɴɢ**  : `{ms}ᵐˢ`\n⚡ **ᴍɪɢʜᴛʏXsᴘᴀᴍ**  : `{mightyversion}`\n⚡ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.9.6`\n⚡ **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n═══════════════════\n\n""", buttons=[
+                                  MIG_PIC, caption=f"""{MIG_TEXT}\n\n═══════════════════\n⚡ 𝐏𝐢𝐧𝐠  : `{ms}ᵐˢ`\n⚡ 𝐎𝐰𝐧𝐞𝐫 : {mention}\n⚡ 𝐌𝐢𝐠𝐡𝐭𝐲 𝐗 𝐒𝐩𝐚𝐦 : `{mightyversion}`\n⚡ 𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `3.9.6`\n⚡ 𝐓𝐞𝐥𝐞𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 : `{version.__version__}`\n═══════════════════\n\n""", buttons=[
         [
         Button.url("✨ ᴄʜᴀɴɴᴇʟ ✨", "https://t.me/MightyXUpdates"),
         Button.url("✨ sᴜᴘᴘᴏʀᴛ ✨", "https://t.me/MightyXSupport")
