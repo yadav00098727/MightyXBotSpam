@@ -22,6 +22,7 @@ mightyversion = "v2.0.4"
 #values
 API_ID = config("API_ID", default=None, cast=int)
 API_HASH = config("API_HASH", default=None)
+ALIVE_NAME = config("ALIVE_NAME", default=None)
 ALIVE_PIC = config("ALIVE_PIC", default=None)
 ALIVE_TEXT = config("ALIVE_TEXT", default=None)
 CMD_HNDLR = getenv("CMD_HNDLR", default="!")
