@@ -5,7 +5,7 @@ from time import time
 from datetime import datetime
 from MightyXSpam import CMD_HNDLR as hl
     
-HELP_PIC = "https://telegra.ph/file/f6ea9ab7683ec1d5f8f57.jpg"
+HELP_PIC = "https://telegra.ph/file/38eae16b57a0c2d039423.jpg"
 
 Mig_Help = "★ 𝙈𝙞𝙜𝙝𝙩𝙮𝙓𝙎𝙥𝙖𝙢 𝙃𝙚𝙡𝙥 𝙈𝙚𝙣𝙪 ★\n𝐂𝐥𝐢𝐜𝐤 𝐎𝐧 𝐁𝐞𝐥𝐨𝐰 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐅𝐨𝐫 𝐇𝐞𝐥𝐩"
 
