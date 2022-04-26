@@ -53,6 +53,7 @@ Command :
 2) {hl}alive
 3) {hl}restart
 4) {hl}addsudo <reply to user> || Owner Cmd ||
+5) {hl}logs || Owner Cmd ||
 
 **Echo :** To Active Echo On Any User
 Command :
@@ -65,7 +66,7 @@ Command :
 2) {hl}leave : Type in the Group bot will auto leave that group
 
 **PackSpam :** Sticker Pack Spam
-1) {hl}packspam (replying to any sticker)
+1) {hl}packspam <reply to any sticker>
 
 **© @MightyXSpam**
 """
