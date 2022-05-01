@@ -44,6 +44,8 @@ if 1517994352 not in SUDO_USERS:
 
 OWNER_ID = int(os.environ.get("OWNER_ID", None))
 
+mention = f"[{ALIVE_NAME}](tg://user?id={OWNER_ID})"
+
 # Don't Mess with Codes !! 
 DB_URI = config("DATABASE_URL", None)
 SUDO_USERS.append(OWNER_ID)
