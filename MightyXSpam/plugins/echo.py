@@ -24,7 +24,7 @@ from resources.data import MightyX
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%saddecho(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%saddecho(?: |$)(.*)" % hl))
 async def echo(event):
-  usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = **ECHO**\n\nCommand:\n\n `{hl}addecho <reply to a User>`"
+  usage = f"**MODULE NAME : ECHO**\n\nCommand :\n\n `{hl}addecho <reply to a User>`"
   if event.sender_id in SUDO_USERS:
      if event.reply_to_msg_id is not None:
             reply_msg = await event.get_reply_message()
@@ -47,7 +47,7 @@ async def echo(event):
                  except BaseException:
                     pass
                  if is_echo(user_id, chat_id):
-                     await event.reply("The User is Already Enabled With Echo ")
+                     await event.reply("Echo Is Already Activated On This User !!")
                      return
                  addecho(user_id, chat_id)
                  await event.reply("Echo Activated On The User ✅")
@@ -65,7 +65,7 @@ async def echo(event):
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%srmecho(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%srmecho(?: |$)(.*)" % hl))
 async def echo(event):
-  usage = f"𝗠𝗼𝗱𝘂𝗹𝗲 𝗡𝗮𝗺𝗲 = **ECHO**\n\nCommand:\n\n `{hl}rmecho <reply to a User>`"
+  usage = f"**MODULE NAME : RM ECHO**\n\nCommand :\n\n `{hl}rmecho <reply to a User>`"
   if event.sender_id in SUDO_USERS or event.sender_id in DEV:
      if event.reply_to_msg_id is not None:
             reply_msg = await event.get_reply_message()
@@ -81,7 +81,7 @@ async def echo(event):
                 remove_echo(user_id, chat_id)
                 await event.reply("Echo Has Been Stopped For The User ☑️")
             else:
-                await event.reply("The User is Not Activated With Echo")
+                await event.reply("Echo Is Already Disabled !!")
      else:
           await event.reply(usage)
 
