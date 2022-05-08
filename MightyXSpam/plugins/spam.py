@@ -40,7 +40,7 @@ from resources.data import GROUP, PORMS
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%sspam(?: |$)(.*)" % hl))
 async def spam(e):
     usage = f"**MODULE NAME : SPAM**\n\nCommand :\n\n{hl}spam <count> <message to spam>\n\n{hl}spam <count> <reply to a message>\n\nCount must be a integer."
-    error = "Spam Module can only be used till 100 count. For bigger spams use BigSpam."
+    error = "__Spam Module can only be used till 100 count. For bigger spams use BigSpam.__"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None)
@@ -63,10 +63,10 @@ async def spam(e):
             message = smex.text
             counter = int(Gulaabo[0])
             if counter > 100:
-                return await e.reply(error, parse_mode=None, link_preview=None)
+                return await e.reply(error)
             await asyncio.wait([e.respond(message) for i in range(counter)])
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
+            await e.reply(usage)
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%sbigspam" % hl))
@@ -111,7 +111,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(0.3)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%sdelayspam" % hl))
@@ -160,7 +160,7 @@ async def spam(e):
                     await e.client.send_message(e.chat_id, message)
                     await asyncio.sleep(sleeptime)
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None)
+            await e.reply(usage)
 
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
@@ -174,6 +174,7 @@ async def spam(e):
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%spornspam(?: |$)(.*)" % hl))
 async def pspam(e):
+    usage = f"**MODULE NAME : PORN SPAM** \n\n command : `{hl}pornspam <count>`"
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
             return await e.reply(usage, parse_mode=None, link_preview=None )
@@ -191,8 +192,7 @@ async def pspam(e):
                          await gifspam(e, smex) 
                      await asyncio.sleep(0.4)
         else:
-            usage = f"**MODULE NAME : PORN SPAM** \n\n command : `{hl}pornspam <count>`"
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
 
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
@@ -205,7 +205,7 @@ async def pspam(e):
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
 async def hang(e):
-    usage = f"**MODULE NAME : HANG SPAM** \n\n Cmd : `{hl}hang <count>`"
+    usage = f"**MODULE NAME : HANG SPAM** \n\nCommand : `{hl}hang <count>`"
     if e.sender_id in SUDO_USERS:
         Mighty = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
         if len(Mighty) == 1:
@@ -230,6 +230,7 @@ async def hang(e):
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%spackspam(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%spackspam(?: |$)(.*)" % hl))
 async def packspam(e):
+    usage = f"**MODULE NAME : PACK SPAM** \n\nCommand : `{hl}packspam <reply to any sticker>`"
     if e.sender_id in SUDO_USERS:
         try:
             x = await e.get_reply_message()
@@ -257,5 +258,4 @@ async def packspam(e):
                     await asyncio.sleep(0.3)
         except Exception as xy:
             print(str(xy))
-            usage = f"**Module Name : Pack Spam** \n\n cmd : `{hl}packspam (replying to any sticker)`"
             await e.reply(usage)
