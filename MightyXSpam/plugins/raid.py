@@ -180,7 +180,7 @@ async def _(e):
 @Mig9.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
 @Mig10.on(events.NewMessage(incoming=True, pattern=r"\%sdreplyraid(?: |$)(.*)" % hl))
 async def _(e):
-    usage = f"**MODULE NAME : DREPLYRAID\n\nCommand:\n\n{hl}dreplyraid <Username of User>\n\n{hl}dreplyraid <reply to a User>"
+    usage = f"**MODULE NAME : DREPLYRAID**\n\nCommand:\n\n{hl}dreplyraid <Username of User>\n\n{hl}dreplyraid <reply to a User>"
     global que    
     if e.sender_id in SUDO_USERS:
         if e.text[0].isalpha() and e.text[0] in ("/", "#", "@", "!"):
@@ -210,7 +210,7 @@ async def _(e):
             text = "Reply Raid De-Activated !! ✅"
             await e.reply(text, parse_mode=None, link_preview=None )
         else:
-            await e.reply(usage, parse_mode=None, link_preview=None )
+            await e.reply(usage)
     
 @Mig.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
 @Mig2.on(events.NewMessage(incoming=True, pattern=r"\%sdelayraid(?: |$)(.*)" % hl))
